@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body{
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 12px;
+  background: no-repeat linear-gradient( hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  min-height: 100vh;
+  display: flow-root;
+}
+
+.wrapper{
+  width: 90%;
+  max-width: 675px;
+  margin: 120px auto 30px;
+}
+
+.wrapper > img{
+  display: none;
+}
+
+.card{
+  background: white;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  display: flow-root;
+  padding: 0 15px 30px;
+  padding-top: 0;
+}
+
+.mobile-imgs{
+  position: relative
+}
+
+.mobile-imgs img{
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+.mobile-imgs img:first-child{
+  transform: translate(-50%);
+}
+
+.mobile-imgs img:nth-child(2){
+  transform: translate(-55%, -55%);
+}
+
+.desktop-imgs{
+  display: none;
+}
+
+main{
+  margin-top: 130px;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 10px;
+  color: hsl(238, 29%, 16%);
+  font-size: 30px;
+  font-weight: 700;
+
+}
+
+.item{
+  padding: 15px 0;
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+.question{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.question:hover{
+  cursor: pointer;
+}
+
+h2{
+  font-size: 15px;
+  font-weight: 400;
+  color:  hsl(237, 12%, 33%);
+}
+
+
+
+p{
+  font-size: 12px;
+  color: hsl(240, 6%, 50%);
+  font-weight: 400;
+  line-height: 16px;
+  padding-right: 10px;
+  display: none;
+}
+
+.active-question{
+  color: hsl(238, 29%, 16%);
+  font-weight: 700;
+  margin-bottom: 10px;
+
+}
+
+.active-para{
+  display: block;
+}
+
+.active-arrow{
+  transform: scaleY(-1);
+}
+
+@media (min-width: 1200px){
+  .wrapper{
+    max-width: 1000px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+  .card{
+    display: flex;
+    padding: 100px;
+    overflow: hidden;
+  }
+  .mobile-imgs{
+    display: none;
+  }
+  .desktop-imgs{
+    display: block;
+    flex: 1;
+    position: relative;
+  }
+  .wrapper > img{
+    display: block;
+  }
+  .desktop-imgs img:first-child{
+    top: -400px;
+    left: -673px;
+  }
+
+  .desktop-imgs img:nth-child(2){
+    top: -27px;
+    left: -179px;
+  }
+
+  .wrapper > img{
+    position: absolute;
+    top: 209px;
+    left: -91px;
+    z-index: 1;
+  }
+
+  .desktop-imgs img{
+    position: absolute;
+  }
+  main{
+    flex: 1;
+    margin-top: 0;
+  }
+
+  h2:hover{
+    color: hsl(14, 88%, 65%);
+  }
+
+}
