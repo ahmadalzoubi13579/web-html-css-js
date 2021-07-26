@@ -1,20 +1,47 @@
-const questions = document.querySelectorAll('.question');
+let openMenuBtn = document.querySelector('.open-menu-button');
+let closeMenuBtn = document.querySelector('.close-menu-button');
+let menu = document.querySelector('.menu');
+let banner = document.querySelector('.banner');
+let items = document.querySelectorAll('.span-wrapper');
 
-questions.forEach((item) => {
+openMenuBtn.addEventListener('click', () => {
+  openMenuBtn.classList.add('unactive');
+  closeMenuBtn.classList.add('active');
+
+  menu.classList.add('active');
+  banner.classList.add('unactive');
+});
+
+closeMenuBtn.addEventListener('click', () => {
+  openMenuBtn.classList.remove('unactive');
+  closeMenuBtn.classList.remove('active');
+
+  menu.classList.remove('active');
+  banner.classList.remove('unactive');
+
+  items.forEach((item) => {
+    let dropDownMenu = item.nextElementSibling;
+    dropDownMenu.classList.remove('active');
+  });
+});
+
+function collapseAllDropDownMenues(currenIndex) {
+  items.forEach((item, index) => {
+    if (index !== currenIndex) {
+      let dropDownMenu = item.nextElementSibling;
+      dropDownMenu.classList.remove('active');
+    }
+  });
+}
+
+items.forEach((item, index) => {
   item.addEventListener('click', (e) => {
-    const question = e.currentTarget.children[0];
-    const arrrow = e.currentTarget.children[1];
-    const para = e.currentTarget.nextElementSibling;
-
-    if (question.classList.contains('active-question')) {
-      question.classList.remove('active-question');
-      arrrow.classList.remove('active-arrow');
-      para.classList.remove('active-para');
+    collapseAllDropDownMenues(index);
+    let dropDownMenu = item.nextElementSibling;
+    if (dropDownMenu.classList.contains('active')) {
+      dropDownMenu.classList.remove('active');
     } else {
-      question.classList.add('active-question');
-      arrrow.classList.add('active-arrow');
-
-      para.classList.add('active-para');
+      dropDownMenu.classList.add('active');
     }
   });
 });

@@ -11,36 +11,39 @@ The designs were created to the following widths:
 
 ### Primary
 
-#### Text
-
-- Very dark desaturated blue: hsl(238, 29%, 16%)
-- Soft red: hsl(14, 88%, 65%)
-
-#### Gradient
-
-Background gradient:
-
-- Soft violet: hsl(273, 75%, 66%)
-- Soft blue: hsl(240, 73%, 65%)
+- Light red (CTA text): hsl(356, 100%, 66%)
+- Very light red (CTA hover background): hsl(355, 100%, 74%)
+- Very dark blue (headings): hsl(208, 49%, 24%)
 
 ### Neutral
 
-#### Text
+- White (text): hsl(0, 0%, 100%)
+- Grayish blue (footer text): hsl(240, 2%, 79%)
+- Very dark grayish blue (body copy): hsl(207, 13%, 34%)
+- Very dark black blue (footer background): hsl(240, 10%, 16%)
 
-- Very dark grayish blue: hsl(237, 12%, 33%)
-- Dark grayish blue: hsl(240, 6%, 50%)
+### Gradient
 
-#### Dividers
+Background gradient - Intro/CTA mobile nav:
 
-- Light grayish blue: hsl(240, 5%, 91%)
+- Very light red: hsl(13, 100%, 72%)
+- Light red: hsl(353, 100%, 62%)
+
+Background gradient - body:
+
+- Very dark gray blue: hsl(237, 17%, 21%)
+- Very dark desaturated blue: hsl(237, 23%, 32%)
 
 ## Typography
 
 ### Body Copy
 
-- Font size: 12px
+- Font size: 16px
 
-### Font
+### Fonts
 
-- Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
-- Weights: 400, 700
+- Family: [Overpass](https://fonts.google.com/specimen/Overpass?preview.text_type=custom)
+- Weights: 300, 600
+
+- Family: [Ubuntu](https://fonts.google.com/specimen/Ubuntu?preview.text_type=custom)
+- Weights: 400, 500, 700
