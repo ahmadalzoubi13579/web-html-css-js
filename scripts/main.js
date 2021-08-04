@@ -1,57 +1,88 @@
-const openMenuButton = document.querySelector('.open-menu-button');
-const closeMenuButton = document.querySelector('.close-menu-button');
-const menu = document.querySelector('.menu');
+let billInput = document.querySelector('#bill');
+let tipOptions = document.querySelectorAll('.buttons button');
+let customTipInput = document.querySelector('#custom');
+let peopleNumInput = document.querySelector('#people');
 
-const tabs = document.querySelectorAll('.features-title li');
-const features = document.querySelectorAll('.features-content li');
+let tip;
 
-const questions = document.querySelectorAll('.question');
+let tipAmount = document.querySelector('.tip-amount');
+let total = document.querySelector('.total');
 
-tabs.forEach((tab, tabIndex) => {
-  tab.addEventListener('click', () => {
-    tabs.forEach((tab) => {
-      const span = tab.children[0];
-      span.classList.remove('active-tab');
-    });
-    const span = tab.children[0];
-    span.classList.add('active-tab');
+let reset = document.querySelector('.reset');
 
-    features.forEach((feature, featureInex) => {
-      if (tabIndex === featureInex) {
-        feature.classList.add('active');
-      } else {
-        feature.classList.remove('active');
-      }
-    });
+let billSpan = document.querySelector('.bill .span-error');
+let peopleNumSpan = document.querySelector('.people .span-error');
+
+tipOptions.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    button = e.target;
+    tip = Number(button.value);
+    resetButtons();
+    item.classList.add('active-button');
+    customTipInput.value = '';
+    calculateResult();
   });
 });
 
-questions.forEach((question, questionIndex) => {
-  question.addEventListener('click', () => {
-    questions.forEach((question2, questionIndex2) => {
-      if (questionIndex !== questionIndex2) {
-        const p = question2.nextElementSibling;
-        const arrow = question2.children[1];
-        p.classList.remove('active');
-        arrow.classList.remove('active-arrow');
-      }
-    });
-    const p = question.nextElementSibling;
-    const arrow = question.children[1];
-    if (p.classList.contains('active')) {
-      p.classList.remove('active');
-      arrow.classList.remove('active-arrow');
-    } else {
-      p.classList.add('active');
-      arrow.classList.add('active-arrow');
-    }
+customTipInput.addEventListener('input', (e) => {
+  resetButtons();
+  tip = Number(e.target.value) / 100;
+});
+
+billInput.addEventListener('input', calculateResult);
+customTipInput.addEventListener('input', calculateResult);
+peopleNumInput.addEventListener('input', calculateResult);
+
+reset.addEventListener('click', resetUi);
+
+function resetButtons() {
+  tipOptions.forEach((item) => {
+    item.classList.remove('active-button');
   });
-});
+}
 
-openMenuButton.addEventListener('click', () => {
-  menu.classList.add('active');
-});
+function resetUi() {
+  billInput.value = '';
+  customTipInput.value = '';
+  peopleNumInput.value = '';
+  tip = null;
+  resetButtons();
+  tipAmount.textContent = '';
+  total.textContent = '';
 
-closeMenuButton.addEventListener('click', () => {
-  menu.classList.remove('active');
-});
+  billSpan.classList.remove('active-span');
+  billInput.classList.remove('active-input-error');
+  peopleNumSpan.classList.remove('active-span');
+  peopleNumInput.classList.remove('active-input-error');
+}
+
+function calculateResult() {
+  if (billInput.value && peopleNumInput.value && tip) {
+    let bill = Number(billInput.value);
+    let peopleNum = Number(peopleNumInput.value);
+    let billPerson = bill / peopleNum;
+    let tipPerson = (tip * bill) / peopleNum;
+    let totalPerson = billPerson + tipPerson;
+
+    tipPerson = tipPerson.toFixed(2);
+    totalPerson = totalPerson.toFixed(2);
+    tipAmount.textContent = `$${tipPerson}`;
+    total.textContent = `$${totalPerson}`;
+  }
+
+  if (!billInput.value) {
+    billSpan.classList.add('active-span');
+    billInput.classList.add('active-input-error');
+  } else {
+    billSpan.classList.remove('active-span');
+    billInput.classList.remove('active-input-error');
+  }
+
+  if (!peopleNumInput.value) {
+    peopleNumSpan.classList.add('active-span');
+    peopleNumInput.classList.add('active-input-error');
+  } else {
+    peopleNumSpan.classList.remove('active-span');
+    peopleNumInput.classList.remove('active-input-error');
+  }
+}

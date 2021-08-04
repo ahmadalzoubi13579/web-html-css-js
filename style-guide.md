@@ -11,31 +11,24 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Soft Blue: hsl(231, 69%, 60%)
-- Soft Red: hsl(0, 94%, 66%)
+- Strong cyan: hsl(172, 67%, 45%)
 
 ### Neutral
 
-- Grayish Blue: hsl(229, 8%, 60%)
-- Very Dark Blue: hsl(229, 31%, 21%)
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Dark grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%)
 
 ## Typography
 
 ### Body Copy
 
-- Font size: 18px
+- Font size (form inputs): 24px
 
-### Fonts
+### Font
 
-- Family: [Rubik](https://fonts.google.com/specimen/Rubik)
-- Weights: 400, 500
-
-## Icons
-
-For the icons in the design, you can choose between using the icons provided or an font icon library.
-
-Some library suggestions can be found below:
-
-- [Font Awesome](https://fontawesome.com)
-- [IcoMoon](https://icomoon.io)
-- [Ionicons](https://ionicons.com)
+- Family: [Space Mono](https://fonts.google.com/specimen/Space+Mono)
+- Weights: 400, 500, 700

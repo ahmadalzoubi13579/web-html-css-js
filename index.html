@@ -5,220 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
     <link rel="stylesheet" href="styles/style.css" />
-    <script src="https://kit.fontawesome.com/4c79987286.js" crossorigin="anonymous"></script>
     <script src="scripts/main.js" defer></script>
-    <title>Frontend Mentor | Bookmark landing page</title>
+    <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
-    <header>
-      <nav class="header-nav">
-        <a href=""><img src="images/logo-bookmark.svg" alt="Bookmark" /></a>
-        <div class="open-menu-button"></div>
-        <div class="menu">
-          <div class="logo-menu-wrapper">
-            <div class="close-menu-button"></div>
-          </div>
-          <ul class="menu-links">
-            <li><a href="">Features</a></li>
-            <li><a href="">Pricing</a></li>
-            <li><a href="">Contact</a></li>
-          </ul>
-          <button>Login</button>
-          <ul class="icons">
-            <li>
-              <a href=""><i class="fab fa-facebook-square"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fab fa-twitter"></i></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div class="banner">
-        <div class="banner-background-wrapper">
-          <div class="blue-background right-background">
-            <div class="img"></div>
-          </div>
-        </div>
-        <div class="banner-content-wrapper">
-          <h1>A Simple Bookmark Manager</h1>
-          <p>
-            A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for
-            free.
-          </p>
-          <div class="buttons">
-            <button class="btn chrome-btn">Get it on Chrome</button>
-            <button class="btn firefox-btn">Get it on Firefox</button>
-          </div>
-        </div>
-      </div>
-    </header>
+    <img src="images/logo.svg" alt="splitter" />
     <main>
-      <section class="features-section">
-        <h2>Features</h2>
-        <p>
-          Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access
-          them on the go.
-        </p>
-        <ul class="features-title">
-          <li><span class="active-tab">Simple Bookmarking</span></li>
-          <li><span>Speedy Searching</span></li>
-          <li><span>Easy Sharing</span></li>
-        </ul>
-        <ul class="features-content">
-          <li class="active">
-            <div class="feature">
-              <div class="feature-background-wrapper">
-                <div class="blue-background left-background">
-                  <div class="img"></div>
-                </div>
-              </div>
-              <div class="feature-content-wrapper">
-                <h3>Bookmark in one click</h3>
-                <p>
-                  Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your
-                  favourite sites.
-                </p>
-                <button class="btn">More Info</button>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="feature">
-              <div class="feature-background-wrapper">
-                <div class="blue-background left-background">
-                  <div class="img"></div>
-                </div>
-              </div>
-              <div class="feature-content-wrapper">
-                <h3>Intelligent search</h3>
-                <p>Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.</p>
-                <button class="btn">More Info</button>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="feature">
-              <div class="feature-background-wrapper">
-                <div class="blue-background left-background">
-                  <div class="img"></div>
-                </div>
-              </div>
-              <div class="feature-content-wrapper">
-                <h3>Share your bookmarks</h3>
-                <p>Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.</p>
-                <button class="btn">More Info</button>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </section>
-      <section class="browsers-section">
-        <h2>Download the extension</h2>
-        <p>We’ve got more browsers in the pipeline. Please do let us know if you’ve got a favourite you’d like us to prioritize.</p>
-        <div class="browsers">
-          <div class="browser">
-            <div class="img"></div>
-            <h3>Add to Chrome</h3>
-            <p>Minimum version 62</p>
-            <button class="btn">Add & Install Extension</button>
+      <div class="sections-wrapper">
+        <section class="bill">
+          <div class="label-wrapper">
+            <label for="bill">Bill</label>
+            <span class="span-error">Can't be zero</span>
           </div>
-          <div class="browser">
-            <div class="img"></div>
-            <h3>Add to Firefox</h3>
-            <p>Minimum version 55</p>
-            <button class="btn">Add & Install Extension</button>
+          <input type="number" name="" id="bill" placeholder="0" />
+          <i class="icon-dollar"></i>
+        </section>
+        <section class="tip">
+          <label for="">Select Tip %</label>
+          <div class="buttons">
+            <button value="0.05">5%</button>
+            <button value="0.1">10%</button>
+            <button value="0.15">15%</button>
+            <button value="0.25">25%</button>
+            <button value="0.5">50%</button>
+            <input type="number" id="custom" class="custom" placeholder="Custom">
           </div>
-          <div class="browser">
-            <div class="img"></div>
-            <h3>Add to Opera</h3>
-            <p>Minimum version 46</p>
-            <button class="btn">Add & Install Extension</button>
+        </section>
+        <section class="people">
+          <div class="label-wrapper">
+            <label for="people">Number of People</label>
+            <span class="span-error">Can't be zero</span>
           </div>
+          <input type="number" name="" id="people" placeholder="0" />
+          <i class="icon-person"></i>
+        </section>
+      </div>
+      <section class="results">
+        <div>
+          <label for="">
+            <span>Tip Amount</span>
+            <span>/ person</span>
+          </label>
+          <output class="tip-amount">$0.00</output>
         </div>
-      </section>
-      <section class="questions-section">
-        <h2>Frequently Asked Questions</h2>
-        <p>Here are some of our FAQs. If you have any other questions you’d like answered please feel free to email us.</p>
-        <ul class="questions">
-          <li>
-            <div class="question">
-              <span>What is Bookmark?</span>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum quis
-              quam ornare mattis.
-            </p>
-          </li>
-          <li>
-            <div class="question">
-              <span>How can I request a new browser?</span>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <p>
-              Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros
-              aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis
-              ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
-            </p>
-          </li>
-          <li>
-            <div class="question">
-              <span>Is there a mobile app?</span>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <p>
-              Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum urna vulputate eget. Cras in ligula
-              quis est pharetra mattis sit amet pharetra purus. Sed sollicitudin ex et ultricies bibendum.
-            </p>
-          </li>
-          <li>
-            <div class="question">
-              <span>What about other Chromium browsers?</span>
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <p>
-              Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam vitae neque eget nisl gravida
-              pellentesque non ut velit.
-            </p>
-          </li>
-        </ul>
-        <div class="btn-wrapper"><button class="btn">More Info</button></div>
-      </section>
-      <section class="form-section">
-        <div class="form-content-wrappper">
-          <p>35,000+ already joined</p>
-          <h2>Stay up-to-date with what we’re doing</h2>
-          <form action="">
-            <input type="email" name="" id="" required placeholder="Enter your email address" />
-            <button>Contact Us</button>
-          </form>
+        <div>
+          <label for="">
+            <span>Total</span>
+            <span>/ person</span>
+          </label>
+          <output class="total">$0.00</output>
         </div>
+        <button class="reset">Reset</button>
       </section>
     </main>
-    <footer>
-      <nav class="footer-nav">
-        <ul class="footer-links">
-          <li><a href="">Features</a></li>
-          <li><a href="">Pricing</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
-        <ul class="icons">
-          <li>
-            <a href=""><i class="fab fa-facebook-square"></i></a>
-          </li>
-          <li>
-            <a href=""><i class="fab fa-twitter"></i></a>
-          </li>
-        </ul>
-      </nav>
-      <!-- <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p> -->
-    </footer>
+
+    <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
   </body>
 </html>
